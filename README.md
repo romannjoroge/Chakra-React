@@ -9,7 +9,7 @@ Chakra is a React UI framework that makes app design easier for devs. It does th
 3. Install additional packages such as chakra icons if needed
 
 ## Notes
-If we want to give our application access to chakra we wrap the top level component *(in my case its the app component in app.js)* with the ChakraProvider component. We can then use custom components such as buttons from chakra by importing them and using them
+If we want to give our application access to a default or custom chakra  theme we wrap the top level component *(in my case its the app component in app.js)* with the ChakraProvider component. We can then use custom components such as buttons from chakra by importing them and using them
 ```javascript
 import { ChakraProvider } from "@chakra-ui/react";  // give acces to chakra
 import { Button } from "@chakra-ui/react"; // import prebuilt components from chakra
@@ -39,3 +39,22 @@ An example:
     values.
 </Text>
 ```
+Another common component is a **Box** which behaves like a div. 
+For the as prop in Chakra components you can pass another component inorder to transfer the styles from the provided component to the parent component e.g we have a Box component and we want to **pass styles of the Heading component into it**. This would be done like this
+```javascript
+<Box as={Heading}>
+  Some heading looking text
+</Box>
+```
+
+### Creating a custom link
+Chakra provides a link component called Link but react router dom needs its Link component to enable the app to router without causing a page reload. The way to get the styles from Chakra's Link component but also get the linking capabilities from react-router-dom is to create a custom link component.
+
+
+### Customizing the Theme object
+
+### Creating a dark mode toggler
+
+### Responsive design
+
+### sx prop
