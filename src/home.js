@@ -1,4 +1,5 @@
 import { Button, Text } from "@chakra-ui/react";
+import CustomLink from "./Components/CustomLink";
 
 export default function Home() {
     return (
@@ -9,6 +10,10 @@ export default function Home() {
                 values.
             </Text>
             <Button>This is a button</Button>
+            <hr></hr>
+            <Text>
+                Link to <CustomLink route='/about' ChakraComponent={Text}>about page</CustomLink>
+            </Text>
         </div>
     );
 }

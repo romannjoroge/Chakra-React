@@ -48,13 +48,36 @@ For the as prop in Chakra components you can pass another component inorder to t
 ```
 
 ### Creating a custom link
+
+#### Brief Overview on Routing
+Routing can be achieved using react-router-dom. This routing allows the client to handle routing instead of sending routing requests to the server. The basic set up involves create a router object. The router object defines what component to load when a route is gone to. We add the router to the app using RouterProvider which is wrapped around the core component of the app i.e App. App contains a widget that has routes
+
 Chakra provides a link component called Link but react router dom needs its Link component to enable the app to router without causing a page reload. The way to get the styles from Chakra's Link component but also get the linking capabilities from react-router-dom is to create a custom link component.
 
+When creating the custom link we wrap everything in the Link used by react-router-dom. Inside it we place the Chakra UI Link then inside it we can keep whatever other component we want
+```javascript
+import { Link } from 'react-router-dom'
+import { Link as Clink} from '@chakra-ui/react'
+
+export default function CustomLink({ route, ChakraComponent, children, ...props }) {
+    return (
+        <Link to={route}>
+            <Clink>
+                <ChakraComponent {...props}>{children}</ChakraComponent>    
+            </Clink>
+        </Link>
+    );
+}
+```
 
 ### Customizing the Theme object
 
+
 ### Creating a dark mode toggler
+
 
 ### Responsive design
 
+
 ### sx prop
+The sx prop for a component allows you to give the chakra component multiple styles at once as a dictionary
