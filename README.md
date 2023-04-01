@@ -24,3 +24,18 @@ export default function App() {
   )
 }
 ```
+### Components
+Components that are imported from chakra come with some default stylings in default. An example is the Text component which is used to style paragraphs in the app. 
+The components not only come with default stylings, they also allow you to pass custom stylings as props, change the html tag it will render to with the as prop. Props that deal with CSS stylings are not only limited to CSS style properties since Chakra has defined some custom CSS style values for these components.  
+
+In summary, these components reduce alot of the work done during styling
+For information on what components Chakra provides and the props they take you can look at the [Documentation](https://chakra-ui.com/docs/components)
+
+An example:
+```javascript
+<Text as='section' fontSize='4xl' color='red' noOfLines={2}>
+    This is a paragraph that is styled using the Text's component props. The as prop changes what tag the component will be rendered to, 
+    the color prop changes the color, fontSize changes fontsize etc. It's possible for these props to hold values that are not valid CSS 
+    values.
+</Text>
+```
